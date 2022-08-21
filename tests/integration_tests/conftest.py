@@ -2,11 +2,10 @@
 
 import pytest
 
-from app.create_app import (
+from app.create_app import (  # so that we dont start the app when going to our unit tests
     create_application,
-)  # so that we dont start the app when going to our unit tests
-from models import recreate_tables
-from models.base import engine
+)
+from models.base import engine, recreate_tables
 
 
 @pytest.fixture(scope="function")

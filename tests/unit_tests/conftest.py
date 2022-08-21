@@ -11,8 +11,9 @@ from app.clients.db import DatabaseClient
 from app.config import Config
 from app.schemas.user import FullUserProfile
 from app.services.user import UserService
-from models import LikedPost, User, recreate_tables
-from models.base import engine
+from models.base import engine, recreate_tables
+from models.liked_post import LikedPost
+from models.user import User
 
 
 class SQliteConfig(

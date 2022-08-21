@@ -13,7 +13,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # environment
 VSCODE_GIT_ASKPASS_MAIN = /snap/code/105/usr/share/code/resources/app/extensions/git/dist/askpass-main.js
 # 'override' directive
-GNUMAKEFLAGS := 
+GNUMAKEFLAGS :=
 # automatic
 <D = $(patsubst %/,%,$(dir $<))
 # automatic
@@ -133,11 +133,11 @@ GIO_LAUNCHED_DESKTOP_FILE_PID = 836562
 # environment
 DISPLAY = :0
 # environment
-SNAP_INSTANCE_KEY = 
+SNAP_INSTANCE_KEY =
 # environment
 PWD = /home/chinmay/python/python-api-project
 # default
-.LOADED := 
+.LOADED :=
 # environment
 SSH_AGENT_PID = 2874
 # environment
@@ -223,7 +223,7 @@ VSCODE_GIT_ASKPASS_EXTRA_ARGS = --ms-enable-electron-run-as-node
 # environment
 TERM_PROGRAM = vscode
 # default
-.VARIABLES := 
+.VARIABLES :=
 # automatic
 *F = $(notdir $*)
 # environment
@@ -259,14 +259,14 @@ QT_ACCESSIBILITY = 1
 # environment
 GIT_ASKPASS = /snap/code/105/usr/share/code/resources/app/extensions/git/dist/askpass.sh
 # default
-MAKEFILES := 
+MAKEFILES :=
 # environment
 SNAP_COOKIE = zBqD7fN_1b1VRhtu9r_AKWkQgw6JICf56mSIKMZ4lxyb2HukOqrb
 # environment
 LC_NUMERIC = ja_JP.UTF-8
 # automatic
 <F = $(notdir $<)
- 
+
 make: *** No rule to make target 'all'.  Stop.
 
 # makefile (from 'Makefile', line 3)
@@ -284,9 +284,9 @@ GJS_DEBUG_TOPICS = JS ERROR;JS LOG
 # automatic
 ^F = $(notdir $^)
 # default
-SUFFIXES := 
+SUFFIXES :=
 # environment
-SNAP_REEXEC = 
+SNAP_REEXEC =
 # environment
 CHROME_DESKTOP = code-url-handler.desktop
 # environment
@@ -296,7 +296,7 @@ WINDOWPATH = 2
 # environment
 GJS_DEBUG_OUTPUT = stderr
 # default
-.RECIPEPREFIX := 
+.RECIPEPREFIX :=
 # environment
 LC_ADDRESS = ja_JP.UTF-8
 # environment
@@ -405,7 +405,7 @@ start_build:
 #  File does not exist.
 #  File has not been updated.
 #  recipe to execute (from 'Makefile', line 9):
-	docker-compose build 
+	docker-compose build
 
 # files hash-table stats:
 # Load=12/1024=1%, Rehash=0, Collisions=0/36=0%
@@ -422,5 +422,3 @@ start_build:
 # hash-table stats:
 # Load=40/8192=0%, Rehash=0, Collisions=1/59=2%
 # Finished Make data base on Sun Aug 21 18:56:43 2022
-
- 

@@ -28,7 +28,7 @@ class RedisCache:
             return pickle.loads(decompressed_val)  # deserialize the value
         except Exception as e:
             logger.error(
-                f"Encountered error {str(e)} when trying to" 
+                f"Encountered error {str(e)} when trying to"
                 f"read prefix: {prefix} and key: {key}"
             )
         return
@@ -43,7 +43,7 @@ class RedisCache:
             )  # set default expiration time
         except Exception as e:
             logger.error(
-                f"Encountered error {str(e)} when trying to" 
+                f"Encountered error {str(e)} when trying to"
                 f"save: {value} to {storage_key}"
             )
         return
@@ -63,7 +63,7 @@ class RedisCache:
             return pickle.loads(decompressed_val)
         except Exception as e:
             logger.error(
-                f"Encountered error {str(e)} when trying to" 
+                f"Encountered error {str(e)} when trying to"
                 f"read prefix: {prefix} and key: {key}"
             )
         return

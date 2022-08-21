@@ -6,7 +6,7 @@ start:
 	@docker-compose up -d	# add @ to not see the actual cmd
 
 start_build:
-	docker-compose build 
+	docker-compose build
 
 stop:
 	@docker-compose down
@@ -22,5 +22,5 @@ check_lint:
 	@docker-compose exec app-test /bin/sh -c "mypy . && isort --check-only . && black --check . \
 	&& flake8 app models tests"
 
-fix_lint: 
+fix_lint:
 	@docker-compose exec app-test /bin/sh -c "isort . && black .""
