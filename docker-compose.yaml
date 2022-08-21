@@ -1,0 +1,61 @@
+version: "3"
+
+services:
+  app:
+    build:
+      context: .
+      args:
+        - ENVIRONMENT=local
+    ports:
+      - "8080:8080"
+    entrypoint: ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8080", "--reload"]
+    volumes:
+      - ./app:/usr/src/app  # Map the folder locally to the one inside docker container
+      - ./models:/usr/src/models
+    environment:
+      - db_postgres_host=postgresql://postgres:postgres@postgresdb:5432/postgres
+      - db_redis_host=redis://redis # second is the service name
+    depends_on:
+      - postgresdb  # before running this service postgresdb should be running
+      - redis
+
+  app-test:
+    build:
+      context: .
+      args:
+        - ENVIRONMENT=test
+    volumes:
+      - .:/usr/src  # to execute tests run "docker-compose exec -T app-test pytest tests"
+    entrypoint: ["sleep", "infinity"]
+    environment:
+      - db_postgres_host=postgresql://postgres:postgres@testingdb:5432/postgres
+      - app_env=test
+    depends_on:
+      - testingdb
+
+
+  postgresdb:
+    image: postgres:14.1-alpine
+    ports:
+      - "5432:5432" # open this port in the container 
+    env_file:
+      - .env-local
+    volumes:
+      - pgdb:/var/lib/postgresql/data   # when down does not reset
+
+  testingdb:
+    image: postgres:14.1-alpine
+    env_file:
+      - .env-local
+  
+  redis:
+    image: redis:6.2-alpine
+    ports:
+      - "6379:6379"
+
+volumes:
+  pgdb:   # docker-compose down -v to remove the volumes
+
+
+
+
