@@ -20,7 +20,7 @@ if config.config_file_name is not None:
 import sys
 
 sys.path.insert(1, "")  # directory from where we are running
-from models import Base
+from models.base import Base
 
 target_metadata = Base.metadata
 

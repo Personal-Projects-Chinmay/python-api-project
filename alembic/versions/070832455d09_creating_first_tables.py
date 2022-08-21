@@ -1,7 +1,7 @@
 """Creating first tables
 
 Revision ID: 070832455d09
-Revises: 
+Revises:
 Create Date: 2022-07-27 22:44:17.033755
 
 """
